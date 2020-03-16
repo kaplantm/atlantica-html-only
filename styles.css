@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -59,30 +59,14 @@ a:visited {
   max-height: 150px;
 }
 
-@font-face {
-  font-family: Montserrat;
-  src: url(./assets/fonts/Montserrat-Bold.ttf);
-  font-weight: 600;
-}
-@font-face {
-  font-family: Montserrat;
-  src: url(./assets/fonts/Montserrat-Regular.ttf);
-  font-weight: 400;
-}
-@font-face {
-  font-family: Montserrat;
-  src: url(./assets/fonts/Montserrat-Light.ttf);
-  font-weight: 200;
-}
-
 /********* Header *********/
 header {
-  /* display: flex; */
+  display: flex;
   /* flex: 1; */
   flex-direction: row;
   float: left;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   color: rgba(255, 255, 255, 0.96);
   padding: 20px;
   background: linear-gradient(
@@ -110,6 +94,12 @@ header .header-left {
 header img {
   height: 70px;
 }
+header ul {
+  margin: 0;
+}
+header h1 {
+  display: inline-block;
+}
 
 /********* Navigation *********/
 nav {
@@ -117,7 +107,6 @@ nav {
   flex: 2;
   justify-content: flex-end;
   flex-wrap: wrap;
-  font-family: "Raleway", Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
@@ -127,13 +116,14 @@ nav {
 ul {
   padding-inline-start: 40px;
   padding: 0;
+  margin-top: 0;
 }
 
 nav * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  -webkit-transition: width 0.35s ease;
+  transition: width 0.35s ease;
 }
 
 nav li {
@@ -164,8 +154,8 @@ nav a:after {
   height: 3px;
   position: absolute;
   content: "";
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  -webkit-transition: width 0.35s ease;
+  transition: width 0.35s ease;
   background-color: rgba(255, 255, 255, 0.2);
   width: 0;
 }
@@ -234,14 +224,14 @@ nav .current a:after {
   width: 50%;
   max-width: 400px;
   max-height: 400px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /********* Posts (content containers) *********/
 .post {
   position: relative;
   background: hsla(0, 0%, 100%, 0.96);
-  border-radius: 5px;
+  border-radius: 8px;
   width: 80%;
   margin: 30px;
 
@@ -257,10 +247,12 @@ nav .current a:after {
   position: absolute;
   bottom: -50px;
   width: 100%;
+
+  /* background-color: firebrick; */
 }
 .post .post-banner img {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   width: 100%;
 }
 .post .post-content {
@@ -284,13 +276,29 @@ nav .current a:after {
   margin: 1em 10px 1em 0;
 }
 
-h2 {
-  position: relative;
-  padding-bottom: 0.5em;
-  margin-bottom: 2em;
+.post .post-content ul.no-bullets li:first-child {
+  margin-top: 0;
 }
 
-h2:before {
+.code {
+  font-family: monospace;
+  font-size: 1.25em;
+}
+
+td {
+  vertical-align: top;
+  padding: 1em;
+}
+
+h2,
+h3 {
+  position: relative;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+h2:before,
+h3:before {
   content: "";
   display: block;
   position: absolute;
@@ -298,6 +306,16 @@ h2:before {
   width: 40%;
   left: 0;
   border-bottom: 2px solid hsl(220, 52%, 47%);
+}
+
+h3:before {
+  border-bottom: 2px solid hsl(200, 52%, 47%);
+  width: 25%;
+}
+
+h4 {
+  display: inline-block;
+  margin-bottom: 1em;
 }
 
 /********* Animations *********/
@@ -359,12 +377,6 @@ h2:before {
 .swing:hover {
   -webkit-transform: translateY(-6px);
   transform: translateY(-6px);
-}
-.swing {
-  -webkit-animation: swing 1s ease;
-  animation: swing 1s ease;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
 }
 
 /** waves **/
