@@ -236,6 +236,7 @@ nav .current a:after {
   border-top-right-radius: 8px;
   width: 100%;
 }
+
 .post .post-content {
   padding: 10px 20px;
 }
@@ -286,17 +287,40 @@ h3:before {
   bottom: 0;
   width: 40%;
   left: 0;
-  border-bottom: 2px solid hsl(220, 52%, 47%);
+  border-bottom: 2px solid hsla(220, 52%, 47%, 1);
 }
 
 h3:before {
-  border-bottom: 2px solid hsl(200, 52%, 47%);
+  border-bottom: 2px solid hsla(200, 52%, 47%, 1);
   width: 25%;
 }
 
 h4 {
   display: inline-block;
   margin-bottom: 1em;
+}
+
+.center {
+  text-align: center;
+}
+
+.cta-button {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  margin: 1em;
+  background-color: hsla(160, 52%, 44%, 1);
+  border-radius: 3em;
+  border: 2px solid hsla(252, 0%, 0%, 0.1);
+}
+.cta-button:hover {
+  background-color: hsla(187, 100%, 38%, 0.9);
+}
+
+.cta-button a {
+  color: white;
+  text-decoration: none;
 }
 
 /********* Animations *********/
